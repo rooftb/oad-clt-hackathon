@@ -33,26 +33,33 @@ class Life extends React.Component {
     return (
     <div>
      <Card>
-      <Container>
+        <CardBody>
         <CardTitle>
           <h2>Life</h2>
         </CardTitle>
-        <CardBody>
           <Container>
             <Row>
               <Col xs="6">
-                <span>Marital</span><br />
+                <span className="addictTitle">Marital</span><br />
                 {this.state.marital}
               </Col>
-              <Col xs="6">Education: {this.state.education}</Col>
+              <Col xs="6">
+                <span className="addictTitle">Education</span><br />
+                {this.state.education}
+              </Col>
             </Row>
             <Row>
-              <Col xs="6">Not in Labor: {this.state.notLabor}</Col>
-              <Col xs="6">Income Source: {this.state.incomeSrc}</Col>
+              <Col xs="6">
+                <span className="addictTitle">Not in Labor</span><br />
+                {this.state.notLabor}
+              </Col>
+              <Col xs="6">
+                <span className="addictTitle">Income Source</span><br />
+                {this.state.incomeSrc}
+              </Col>
             </Row>
           </Container>
         </CardBody>
-      </Container>
     </Card>
     </div>
    );

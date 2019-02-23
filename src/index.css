@@ -7,6 +7,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+@fontface {
+  font-family: 'Montserrat', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Montserrat')
+ }
+
+.addictTitle {
+  font-family: 'Montserrat';
+  color: darkslateblue;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
