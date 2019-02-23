@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Addict from './Addict';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
+import { faHeartbeat, faNotesMedical } from '@fortawesome/free-solid-svg-icons'
 
 import {
     Collapse,
@@ -17,7 +17,7 @@ import {
     Col
     // Jumbotron
 } from 'reactstrap';
-library.add(faHeartbeat)
+library.add(faHeartbeat, faNotesMedical);
 class App extends Component {
     constructor(props) {
         super(props);

@@ -3,6 +3,11 @@
   src: url('../src/Avenir.otf');
  }
 
+ @font-face {
+  font-family: "Contax";
+  src: url("../src/Contax.otf");
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,6 +19,24 @@ body {
   background: #e5ecef !important;
 }
 
+.navTab {
+  background-color: #e5ecef !important;
+  color:black;
+  cursor: pointer;
+}
+
+.treatementTitle {
+  font-family: 'Avenir';
+  font-size: 1.3em !important;
+  background-color: darkslateblue !important;
+  opacity: .5 !important;
+}
+
+.card {
+  border: 2px 2px 2px 0;
+  border-color: gray;
+}
+
 .card-title {
   font-family: 'Avenir';
   font-weight: 600;
@@ -23,19 +46,26 @@ body {
 .lifeTitle {
   font-size: 1em;
   font-weight: bold;
+  letter-spacing: .05em;
 }
 
 .addictTitle {
   font-family: 'Avenir';
   color: darkslateblue;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.7em;
+  opacity: 0.9;
 }
 
 .addictDesc {
-  font-family: 'Avenir';
+  font-family: 'Contax';
   color: black;
-  font-size: 1em;
+  font-size: 1.5em;
+}
+
+.addictSubtitle {
+  font-size: 1.3em !important;
+  margin-top: .7em;
 }
 
 .icon {
@@ -43,6 +73,20 @@ body {
   opacity: 0.5;
 }
 
+.activeStat {
+  border: 1px solid grey !important;
+  background:    #8e7cc3;
+background:    -webkit-linear-gradient(#8e7cc3, #5b5197);
+background:    linear-gradient(#8e7cc3, #5b5197);
+border-radius: 5px;
+padding:       8px 20px;
+color:         #ffffff;
+display:       inline-block;
+font:          "Contax";
+font-size: 2em;
+font-weight: bold;
+text-align:    center;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

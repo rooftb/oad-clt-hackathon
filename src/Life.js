@@ -54,6 +54,7 @@ class Life extends React.Component {
                   <span className="addictDesc">{this.state.education}</span>
                 </Col>
               </Row>
+              <br></br>
               <Row>
                 <Col s="6">
                   <span className="addictTitle">Not in Labor</span><br />
