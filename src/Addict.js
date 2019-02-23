@@ -8,6 +8,7 @@ import Life from './Life';
 import Dock from "react-osx-dock";
 import addicts from "./addicts.js";
 import Risk from './Risk';
+import Assessment from './Assessment';
 
 // The Addict component can represent the whole addict page,
 // it'll contain a component for history
@@ -60,13 +61,14 @@ class Addict extends React.Component {
     return (
       <div>
         <div>
-          <Dock width={400} height={100} magnification={1} magnifyDirection="center">
+          <Dock align="center" width={400} height={50} magnification={1} magnifyDirection="center">
             {["a", "b", "c", "d", "e"].map((item, index) => (
               <Dock.Item key={index} onClick={() => console.log(item)}>
                 <img className="dockIcon" src='http://chittagongit.com/images/person-icon-svg/person-icon-svg-26.jpg' />
               </Dock.Item>
             ))}
           </Dock>
+          <br></br>
         </div>
         <Card>
           <CardBody>
@@ -118,6 +120,13 @@ class Addict extends React.Component {
                 Risk
             </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink className="navTab"
+                onClick={() => { this.toggle('4'); }}
+              >
+                Assessment
+            </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
             <TabPane tabId="1">
@@ -129,9 +138,12 @@ class Addict extends React.Component {
             <TabPane tabId="3">
               <Risk methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
             </TabPane>
+            <TabPane tabId="4">
+              <Assessment methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
+            </TabPane>
           </TabContent>
         </Card>
-      </div>
+      </div >
 
     );
   }
