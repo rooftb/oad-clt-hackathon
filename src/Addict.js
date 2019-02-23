@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Col, Container, Badge, Row, Button, TabContent, TabPane, NavItem, Nav, NavLink } from 'reactstrap';
+import { Card, CardBody,
+  CardTitle, Col, Container, Badge, Row, Button, TabContent, TabPane, NavItem, Nav, NavLink } from 'reactstrap';
 import Treatment from './Treatment';
 import Life from './Life';
+import Risk from './Risk';
 
 // The Addict component can represent the whole addict page,
 // it'll contain a component for history
@@ -52,22 +53,20 @@ class Addict extends React.Component {
       <Card>
         <CardBody>
           <CardTitle>CASE: {this.state.caseID}</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
           <Container>
                         <Row>
-                            <Col>
-                            <Button color="primary" outline>
+                            <Col xs="2">
+                            <Button color="light" className="active statBtn" outline>
                                 Age <Badge color="secondary">{this.state.age}</Badge>
                             </Button>
                             </Col>
-                            <Col>
-                            <Button color="primary" outline>
+                            <Col xs="2">
+                            <Button color="light" className="active statBtn" outline>
                                 Race <Badge color="secondary">{this.state.race}</Badge>
                             </Button>
                             </Col>
-                            <Col>
-                            <Button color="primary" outline>
+                            <Col xs="2">
+                            <Button color="light" className="active statBtn" outline>
                                 Gender <Badge color="secondary">{this.state.gender}</Badge>
                             </Button>
                             </Col>
@@ -99,6 +98,8 @@ class Addict extends React.Component {
           </TabPane>
         </TabContent>
       </Card>
+      <div style={{height: "50px"}}/>
+      <Risk riskGrade="B+"/>
     </div>
    );
 }
