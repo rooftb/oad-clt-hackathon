@@ -21,16 +21,14 @@ class Assessment extends React.Component {
     let EDUC = event.target.elements.education.value;
     let Employed = event.target.elements.income.value;
     if(Employed > 2) {
-      this.setState({
-        riskGrade: "A"
-      });
+        document.getElementById("riskGrade").innerHTML = "C"
     }
     else {
-      this.setState({
-        riskGrade: "B"
-      })
+      document.getElementById("riskGrade").innerHTML = "C"
     }
     console.log(this.state.riskGrade);
+
+    
   }
   constructor(props) {
     super(props);
@@ -40,17 +38,13 @@ class Assessment extends React.Component {
 
   componentWillMount() {
     this.setState({
-      insurance: this.props.insurance,
-      dsm: this.props.dsm,
-      discharge: this.props.discharge,
-      stayDuration: this.props.stayDuration,
-      firstUse: this.props.firstUse
+      riskGrade: 'A+'
     });
   }
   render() {
     return (
       <div>
-         <Risk riskGrade={this.state.riskGrade} methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
+        <Risk {...this.state} methuse="True" prescriptions="Often" arrests="3" treatment="4" />
         <Card>
           <CardBody>
             <CardTitle>
@@ -194,7 +188,7 @@ class Assessment extends React.Component {
                   </select>
                 </Col>
                 <Col s="6">
-                  <span className="addictTitle">Number of Arrests</span><br />
+                  <span className="addictTitle">Number of Arrests</span><br></br>
                   <select name="arrests" className="addictDesc">
                     <option value="0">None</option>
                     <option value="1">Once</option>
@@ -202,14 +196,8 @@ class Assessment extends React.Component {
                   </select>
                 </Col>
               </Row>
-              <br></br>
-              <Row>
-                <Col s="4">
-                  <button align="center" className="justify-content-center">Submit</button>
-                </Col>
-              </Row>
             </Container>
-            <button type="submit">Do the thing</button>
+            <button onSubmit={this.handleSubmit.bind(this)} type="submit">Do the thing</button>
             </form>
           </CardBody >
         </Card >
