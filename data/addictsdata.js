@@ -1,5 +1,5 @@
 const addicts = {
-    416562: {
+    "416562": {
         age: "30-34 years old",
         gender: "Female",
         race:
@@ -10,7 +10,7 @@ const addicts = {
         arrests: "None",
     },
 
-    575373: {
+    "575373": {
         age: "30-34 years old",
         gender: "Male",
         race:
@@ -21,7 +21,7 @@ const addicts = {
         arrests: "None",
     },
 
-    600710: {
+    "600710": {
         age: "50-54 years old",
         gender: "Male",
         race:

@@ -32,6 +32,14 @@ body {
   opacity: .5 !important;
 }
 
+.dockIcon {
+  height: 2em;
+}
+
+.dockIcon:hover {
+  height:3em;
+}
+
 .card {
   border: 2px 2px 2px 0;
   border-color: gray;

@@ -5,21 +5,26 @@ import {
 } from 'reactstrap';
 import Treatment from './Treatment';
 import Life from './Life';
+import Dock from "react-osx-dock";
+import addicts from "./addicts.js";
 import Risk from './Risk';
 
 // The Addict component can represent the whole addict page,
 // it'll contain a component for history
 class Addict extends React.Component {
   state = {
-    activeTab: '1'
+    activeTab: '1',
+    addicts: {
+
+    }
   };
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
-  handleChangeIndex = index => {
-    this.setState({ value: index });
-  };
+  componentDidMount = () => {
+    this.setState({ addicts: addictsdata })
+  }
 
   constructor(props) {
     super(props);
@@ -54,6 +59,15 @@ class Addict extends React.Component {
   render() {
     return (
       <div>
+        <div>
+          <Dock width={400} height={100} magnification={1} magnifyDirection="center">
+            {["a", "b", "c", "d", "e"].map((item, index) => (
+              <Dock.Item key={index} onClick={() => console.log(item)}>
+                <img className="dockIcon" src='http://chittagongit.com/images/person-icon-svg/person-icon-svg-26.jpg' />
+              </Dock.Item>
+            ))}
+          </Dock>
+        </div>
         <Card>
           <CardBody>
             <CardTitle><i>CASE: {this.state.caseID}</i></CardTitle>
@@ -97,6 +111,13 @@ class Addict extends React.Component {
                 Life
             </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink className="navTab"
+                onClick={() => { this.toggle('3'); }}
+              >
+                Risk
+            </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
             <TabPane tabId="1">
@@ -104,6 +125,9 @@ class Addict extends React.Component {
             </TabPane>
             <TabPane tabId="2">
               <Life marital="married" education="high school" notLabor="hurt" incomeSrc="disability" />
+            </TabPane>
+            <TabPane tabId="3">
+              <Risk methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
             </TabPane>
           </TabContent>
         </Card>
