@@ -24,11 +24,11 @@ class Assessment extends React.Component {
         document.getElementById("riskGrade").innerHTML = "C"
     }
     else {
-      document.getElementById("riskGrade").innerHTML = "C"
+      document.getElementById("riskGrade").innerHTML = "B"
     }
-    console.log(this.state.riskGrade);
-
-    
+    this.setState({
+      riskGrade: "B" 
+    })
   }
   constructor(props) {
     super(props);

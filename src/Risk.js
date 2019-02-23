@@ -13,19 +13,33 @@ class Risk extends React.Component {
 
   constructor(props) {
     super(props);
-
+    this.updateRecommendation = this.updateRecommendation.bind(this);
     this.setState({
 
     });
   }
-
+  componentDidMount() {
+    this.updateRecommendation();
+  }
+  updateRecommendation() {
+    if(this.state.riskGrade == "A+" || this.state.riskGrade == "A") {
+      document.getElementById("recommendation").innerHTML = "Continue Pain Managment"
+    }
+    else if(this.state.riskGrade == "B") {
+      document.getElementById("recommendation").innerHTML = "Opioid Dependence Treatment"
+    }
+    else if(this.state.riskGrade == "C" || this.state.riskGrade == "D") {
+      document.getElementById("recommendation").innerHTML = "Inpatient Treatment"
+    }
+  }
   componentWillMount() {
     this.setState({
       methuse: this.props.methuse,
       prescriptions: this.props.prescriptions,
       treatment: this.props.treatment,
       arrests: this.props.arrests,
-      riskGrade: this.props.riskGrade
+      riskGrade: this.props.riskGrade,
+      recommendation: 'Loading'
     });
   }
   render() {
@@ -38,8 +52,12 @@ class Risk extends React.Component {
             </CardTitle>
             <Container>
               <Row>
-                <Col l="4">
+                <Col sm={{ size: 'auto' }}>
                   <span id="riskGrade" className="riskGrade">{this.state.riskGrade}</span>
+                </Col>
+                <Col lg="6" className="recommendation">
+                  <span className="addictDesc">Recommendation</span><br></br>
+                  <span className="addictTitle bigRec" id="recommendation">{this.state.recommendation}</span>
                 </Col>
               </Row>
               <Row>

@@ -44,6 +44,15 @@ body {
   margin: 1em !important;
 }
 
+.recommendation {
+  font-size: 1em;
+  border: 1px solid black;
+  padding: 10px;
+  font-family: 'Avenir';
+}
+.bigRec {
+  font-size: 2em;
+}
 
 .dockIcon {
   height: 2em;

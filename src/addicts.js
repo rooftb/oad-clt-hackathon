@@ -1,6 +1,6 @@
 const addicts = [
     {
-        caseID: 414141,
+        caseID: 384820,
         age: "30-34 years old",
         gender: "Female",
         insurance: "Private",
@@ -22,7 +22,7 @@ const addicts = [
         caseID: 414141,
         age: "30-34 years old",
         gender: "Male",
-        race:"White",
+        race:"Black",
         education: "16 years +",
         employment: "Full Time Employed",
         living: "Independent Living",
@@ -36,7 +36,7 @@ const addicts = [
         incomeSrc: "Other"
     },
     {
-        caseID: 414141,
+        caseID: 429491,
         age: "50-54 years old",
         gender: "Male",
         race:"White",

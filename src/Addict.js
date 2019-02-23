@@ -58,7 +58,8 @@ class Addict extends React.Component {
       notLabor: item.notLabor,
       incomeSrc: item.incomeSrc,
       dsm: item.dsm,
-      marital: item.marital
+      marital: item.marital,
+      insurance: item.insurance
     });
     console.log(item.caseID);
   }
@@ -71,7 +72,7 @@ class Addict extends React.Component {
         <div>
           <Dock align="center" className="justify-content-center" width={200} height={50} magnification={.5} magnifyDirection="center">
             {addicts.map((item, index) => (
-              <Dock.Item key={index} onClick={(x) => this.setAddictData(x)}>
+              <Dock.Item key={index} onClick={(x) => this.setAddictData(item)}>
                 <img className="dockIcon" src='https://s3.amazonaws.com/iconbros/icons/icon_pngs/000/000/344/original/avatar.png?1510841721' />
               </Dock.Item>
             ))}
