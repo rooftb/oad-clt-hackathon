@@ -14,9 +14,7 @@
     "npm": "^6.8.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-floating-btn-menu": "^1.0.16",
     "react-icons": "^3.4.0",
-    "react-mfb": "^0.6.0",
     "react-osx-dock": "^1.0.0",
     "react-tiny-fab": "^2.0.0",
     "reactstrap": "^7.1.0"

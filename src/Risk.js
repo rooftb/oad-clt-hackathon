@@ -39,7 +39,7 @@ class Risk extends React.Component {
             <Container>
               <Row>
                 <Col l="4">
-                  <span className="riskGrade">{this.state.riskGrade}</span>
+                  <span id="riskGrade" className="riskGrade">{this.state.riskGrade}</span>
                 </Col>
               </Row>
               <Row>
