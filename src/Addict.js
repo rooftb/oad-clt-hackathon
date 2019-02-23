@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, CardText, CardBody,
   CardTitle, CardSubtitle, Col, Container, Badge, Row, Button } from 'reactstrap';
-
+import Treatment from './Treatment';
+import Life from './Life';
 
 // The Addict component can represent the whole addict page,
 // it'll contain a component for history
@@ -65,6 +66,8 @@ class Addict extends React.Component {
                         </Row>
             </Container>
         </CardBody>
+        <Treatment insurance="bluecross" discharge="done" dsm="opiod" firstUse="17" />
+        <Life marital="married" education="high school" notLabor="hurt" incomeSrc="disability" />
       </Card>
     </div>
    );
