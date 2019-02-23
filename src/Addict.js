@@ -71,7 +71,7 @@ class Addict extends React.Component {
         <div>
           <Dock align="center" className="justify-content-center" width={200} height={50} magnification={.5} magnifyDirection="center">
             {["a", "b", "c", "d", "e"].map((item, index) => (
-              <Dock.Item key={index} onClick={() => console.log(item)}>
+              <Dock.Item align="center" className="justify-content-center" key={index} onClick={() => console.log(item)}>
                 <img className="dockIcon" src='http://chittagongit.com/images/person-icon-svg/person-icon-svg-26.jpg' />
               </Dock.Item>
             ))}

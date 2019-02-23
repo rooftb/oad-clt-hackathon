@@ -20,8 +20,9 @@ body {
 }
 
 .headerTitle {
-  font-family: Avenir;
-  font-weight: bold;
+  font-size: 2rem !important;
+  font-family: Avenir !important;
+  font-weight: bold !important;
 }
 
 .navTab {
@@ -38,6 +39,11 @@ body {
   background-color: darkslateblue !important;
   opacity: .5 !important;
 }
+
+.row {
+  margin: 1em !important;
+}
+
 
 .dockIcon {
   height: 2em;
@@ -109,7 +115,7 @@ padding:       8px 20px;
 color:         #ffffff;
 display:       inline-block;
 font:          "Contax";
-font-size: 2em;
+font-size: 1.75em;
 font-weight: bold;
 text-align:    center;
 }
