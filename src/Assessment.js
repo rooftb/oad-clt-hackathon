@@ -18,17 +18,30 @@ class Assessment extends React.Component {
   };
   handleSubmit = (event) => {
     event.preventDefault()
-    // let ageAtFirstUse = event.target.elements.age.value;
+    let ageAtFirstUse = event.target.elements.age.value;
     // let medOps = event.target.elements.methuse.value;
-    // let Educ = event.target.elements.education.value;
-    // let Employed = event.target.elements.income.value;
-    // let
-    // if (ageAtFirstUse < 5 || Employed > 3 || Educ > 3 || medOps > 0) {
-    //   document.getElementById("riskGrade").innerHTML = "A"
-    // } else ({
-    //   document.getElementById("riskGrade").innerHTML = "D"
-    // }
-    // console.log(this.state.riskGrade);
+    let Educ = event.target.elements.education.value;
+    let Employed = event.target.elements.income.value;
+    let y = (-0.018906*Employed) - (0.010201*Educ) + (0.008598771137662643*ageAtFirstUse);
+    console.log(y);
+    let grade = "?";
+    if (y > 0.2) {
+      grade = "A+";
+    }
+    else if (y > -.05 && y < .2) {
+      grade = "B";
+    }
+    else if (y >-1 && y < -.05) {
+      grade = "C";
+    }
+    else if (y < -1) {
+      grade = "D";
+    }
+    document.getElementById("riskGrade").innerHTML = grade;
+    this.setState({
+      riskGrade: grade
+    })
+    console.log(this.state.riskGrade);
 
 
   }
@@ -80,7 +93,7 @@ class Assessment extends React.Component {
                 <Row>
                   <Col s="6">
                     <span className="addictTitle">Age at First Use</span><br />
-                    <select className="addictDesc">
+                    <select name="age" className="addictDesc">
                       <option value="1">11 and Under</option>
                       <option value="2">12 - 14</option>
                       <option value="3">15 - 17</option>

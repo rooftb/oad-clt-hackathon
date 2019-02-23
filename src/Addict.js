@@ -86,19 +86,19 @@ class Addict extends React.Component {
             <Container>
               <Row >
                 <Col l="3" align="center">
-                  <div className=" activeStat" outline>
+                  <div className="activeStat">
                     {this.state.age}
                   </div>
                   <h3 className="addictSubtitle">Age</h3>
                 </Col>
                 <Col l="3" align="center">
-                  <div className=" activeStat" outline>
+                  <div className=" activeStat">
                     {this.state.race}
                   </div>
                   <h3 className="addictSubtitle">Race</h3>
                 </Col>
                 <Col l="3" align="center">
-                  <div className=" activeStat" outline>
+                  <div className=" activeStat">
                     {this.state.gender}
                   </div>
                   <h3 className="addictSubtitle">Gender</h3>
