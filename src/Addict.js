@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import Treatment from './Treatment';
 import Life from './Life';
+import Risk from './Risk';
 
 // The Addict component can represent the whole addict page,
 // it'll contain a component for history
