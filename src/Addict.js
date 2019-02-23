@@ -7,7 +7,7 @@ import Treatment from './Treatment';
 import Life from './Life';
 import Dock from "react-osx-dock";
 import addicts from "./addicts.js";
-import Risk from './Risk';
+
 import Assessment from './Assessment';
 
 // The Addict component can represent the whole addict page,
@@ -147,7 +147,7 @@ class Addict extends React.Component {
           </TabContent>
         </Card>
         <Card>
-        <Risk riskGrade="C" methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
+       
         </Card>
       </div >
 

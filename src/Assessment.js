@@ -4,7 +4,7 @@ import {
   CardTitle, Container, Row, Col, Badge
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import Risk from './Risk';
 class Assessment extends React.Component {
   state = {
     value: 'one'
@@ -25,15 +25,17 @@ class Assessment extends React.Component {
         riskGrade: "A"
       });
     }
-    
-    console.log(Employed);
+    else {
+      this.setState({
+        riskGrade: "B"
+      })
+    }
+    console.log(this.state.riskGrade);
   }
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.setState({
-
-    });
+    this.state = {riskGrade: 'A+'};
   }
 
   componentWillMount() {
@@ -48,6 +50,7 @@ class Assessment extends React.Component {
   render() {
     return (
       <div>
+         <Risk riskGrade={this.state.riskGrade} methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
         <Card>
           <CardBody>
             <CardTitle>
@@ -141,7 +144,7 @@ class Assessment extends React.Component {
               <Row>
                 <Col s="6">
                   <span className="addictTitle">Income Source</span><br />
-                  <select name="income" className="addictDesc">
+                  <select ref={el => this.element = el} name="income" className="addictDesc">
                     <option value="1">Wages/Salary</option>
                     <option value="2">Public Assistance</option>
                     <option value="3">Retirement/Pension/ Disability</option>
