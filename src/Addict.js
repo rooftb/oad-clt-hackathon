@@ -8,7 +8,7 @@ import Life from './Life';
 import Dock from "react-osx-dock";
 import addicts from "./addicts.js";
 import Risk from './Risk';
-
+// import {Fab} from './Fab';
 // The Addict component can represent the whole addict page,
 // it'll contain a component for history
 class Addict extends React.Component {
@@ -54,7 +54,13 @@ class Addict extends React.Component {
       education: item.race,
       employment: item.employ,
       arrests: item.arrests,
-      living: item.livingArrangements
+      living: item.livingArrangements,
+      discharge: item.discharge,
+      firstUse: item.firstUse,
+      notLabor: item.notLabor,
+      incomeSrc: item.incomeSrc,
+      dsm: item.dsm,
+      marital: item.marital
     });
     console.log(item.caseID);
   }
@@ -66,8 +72,17 @@ class Addict extends React.Component {
       race: this.props.race,
       education: this.props.race,
       employment: this.props.employ,
-      arrests: this.state.arrests,
-      living: this.state.livingArrangements
+      arrests: this.props.arrests,
+      living: this.props.livingArrangements,
+      insurance: this.props.insurance,
+      dsm: this.props.dsm,
+      discharge: this.props.discharge,
+      stayDuration: this.props.stayDuration,
+      firstUse: this.props.firstUse,
+      marital: this.props.marital,
+      education: this.props.education,
+      notInLabor: this.props.notInLabor,
+      incomeSrc: this.props.incomeSrc
     });
   }
   render() {
@@ -126,10 +141,10 @@ class Addict extends React.Component {
           </Nav>
           <TabContent  activeTab={this.state.activeTab}>
             <TabPane tabId="1">
-              <Treatment insurance="bluecross" discharge="done" dsm="opiod" firstUse="17" />
+              <Treatment {...this.state} />
             </TabPane>
             <TabPane tabId="2">
-              <Life marital="married" education="high school" notLabor="hurt" incomeSrc="disability" />
+              <Life {...this.state} />
             </TabPane>
           </TabContent>
           <Risk riskGrade="C" methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />

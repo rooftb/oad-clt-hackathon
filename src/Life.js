@@ -21,16 +21,14 @@ class Life extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.setState({
-
+      
     });
   }
 
   componentWillMount() {
     this.setState({
       marital: this.props.marital,
-      education: this.props.education,
       notLabor: this.props.notLabor,
       incomeSrc: this.props.incomeSrc
     });
@@ -47,22 +45,22 @@ class Life extends React.Component {
               <Row>
                 <Col s="6">
                   <span className="addictTitle">Marital</span><br />
-                  <span className="addictDesc">{this.state.marital}</span>
+                  <span className="addictDesc">{this.props.marital}</span>
                 </Col>
                 <Col s="6">
                   <span className="addictTitle">Education</span><br />
-                  <span className="addictDesc">{this.state.education}</span>
+                  <span className="addictDesc">{this.props.education}</span>
                 </Col>
               </Row>
               <br></br>
               <Row>
                 <Col s="6">
                   <span className="addictTitle">Not in Labor</span><br />
-                  <span className="addictDesc">{this.state.notLabor}</span>
+                  <span className="addictDesc">{this.props.notLabor}</span>
                 </Col>
                 <Col s="6">
                   <span className="addictTitle">Income Source</span><br />
-                  <span className="addictDesc">{this.state.incomeSrc}</span>
+                  <span className="addictDesc">{this.props.incomeSrc}</span>
                 </Col>
               </Row>
             </Container>

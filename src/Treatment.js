@@ -46,22 +46,22 @@ class Treatment extends React.Component {
               <Row>
                 <Col s="6">
                   <span className="addictTitle">Insurance</span><br />
-                  <span className="addictDesc">{this.state.insurance}</span>
+                  <span className="addictDesc">{this.props.insurance}</span>
                 </Col>
                 <Col s="6">
                   <span className="addictTitle">Diagnosis</span><br />
-                  <span className="addictDesc">{this.state.dsm}</span>
+                  <span className="addictDesc">{this.props.dsm}</span>
                 </Col>
               </Row>
               <br></br>
               <Row>
                 <Col s="6">
                   <span className="addictTitle">Discharge</span><br />
-                  <span className="addictDesc">{this.state.discharge}</span>
+                  <span className="addictDesc">{this.props.discharge}</span>
                 </Col>
                 <Col s="6">
                   <span className="addictTitle">Age of First Use</span><br />
-                  <span className="addictDesc">{this.state.firstUse}</span>
+                  <span className="addictDesc">{this.props.firstUse}</span>
                 </Col>
               </Row>
             </Container>

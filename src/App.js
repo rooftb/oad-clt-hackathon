@@ -35,8 +35,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Navbar color="inverse" light expand="md">
-                    <NavbarBrand href="/">Opiod Abusers Database (OAD)</NavbarBrand>
+                <Navbar color="dark" light expand="md">
+                    <NavbarBrand style={{color: "white"}} light href="/">Opiod Abusers Database (OAD)</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
@@ -47,7 +47,7 @@ class App extends Component {
                 <Container>
                     <Row>
                         <Col>
-                            <Addict caseID="010101" age="50" gender="F" race="W" />
+                            <Addict />
                         </Col>
                     </Row>
                 </Container>
