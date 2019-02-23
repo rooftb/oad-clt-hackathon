@@ -1,5 +1,6 @@
-const addicts = {
-    "416562": {
+const addicts = [
+    {
+        caseID: 414141,
         age: "30-34 years old",
         gender: "Female",
         race:
@@ -9,8 +10,8 @@ const addicts = {
         living: "Independent Living",
         arrests: "None",
     },
-
-    "575373": {
+    {
+        caseID: 414141,
         age: "30-34 years old",
         gender: "Male",
         race:
@@ -20,8 +21,8 @@ const addicts = {
         living: "Independent Living",
         arrests: "None",
     },
-
-    "600710": {
+    {
+        caseID: 414141,
         age: "50-54 years old",
         gender: "Male",
         race:
@@ -31,4 +32,7 @@ const addicts = {
         living: "Dependent Living",
         arrests: "None"
     }
-}
+]
+
+export default addicts;
+
