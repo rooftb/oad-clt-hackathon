@@ -23,7 +23,7 @@ class Addict extends React.Component {
   };
 
   componentDidMount = () => {
-    this.setState({ addicts: addictsdata })
+    this.setState({ addicts: addicts })
   }
 
   constructor(props) {
