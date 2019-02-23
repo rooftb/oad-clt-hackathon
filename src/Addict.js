@@ -30,6 +30,7 @@ class Addict extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
+    this.setAddictData = this.setAddictData.bind(this);
     this.state = {
       activeTab: '1',
       fadeIn: true
@@ -45,6 +46,19 @@ class Addict extends React.Component {
     }
   }
 
+  setAddictData(item) {
+    this.setState({
+      caseID: item.caseID,
+      age: item.age,
+      gender: item.gender,
+      race: item.race,
+      education: item.race,
+      employment: item.employ,
+      arrests: item.arrests,
+      living: item.livingArrangements
+    });
+    console.log(item.caseID);
+  }
   componentWillMount() {
     this.setState({
       caseID: this.props.caseID,
@@ -73,8 +87,6 @@ class Addict extends React.Component {
         <Card>
           <CardBody>
             <CardTitle><i>CASE: {this.state.caseID}</i></CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
             <Container>
               <Row className="justify-content-center" >
                 <Col l="3" align="center">
@@ -142,6 +154,7 @@ class Addict extends React.Component {
               <Assessment methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
             </TabPane>
           </TabContent>
+          <Risk riskGrade="C" methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
         </Card>
       </div >
 

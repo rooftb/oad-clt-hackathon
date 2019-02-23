@@ -5,6 +5,8 @@ import {
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+
+
 class Risk extends React.Component {
   state = {
   };
@@ -63,6 +65,7 @@ class Risk extends React.Component {
               </Row>
             </Container>
           </CardBody >
+          
         </Card>
       </div>
     );

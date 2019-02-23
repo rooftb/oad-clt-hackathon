@@ -57,7 +57,7 @@ class App extends Component {
                 <Container>
                     <Row>
                         <Col>
-                            {addictsObs}
+                            <Addict caseID="010101" age="50" gender="F" race="W" />
                         </Col>
                     </Row>
                 </Container>
