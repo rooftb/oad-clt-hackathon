@@ -18,17 +18,17 @@ class Assessment extends React.Component {
   };
   handleSubmit = (event) => {
     event.preventDefault()
-    let ageAtFirstUse = event.target.elements.age.value;
-    let medOps = event.target.elements.methuse.value;
-    let Educ = event.target.elements.education.value;
-    let Employed = event.target.elements.income.value;
-    let
-    if (ageAtFirstUse < 5 || Employed > 3 || Educ > 3 || medOps > 0) {
-      document.getElementById("riskGrade").innerHTML = "A"
-    } else ({
-      document.getElementById("riskGrade").innerHTML = "D"
-    }
-    console.log(this.state.riskGrade);
+    // let ageAtFirstUse = event.target.elements.age.value;
+    // let medOps = event.target.elements.methuse.value;
+    // let Educ = event.target.elements.education.value;
+    // let Employed = event.target.elements.income.value;
+    // let
+    // if (ageAtFirstUse < 5 || Employed > 3 || Educ > 3 || medOps > 0) {
+    //   document.getElementById("riskGrade").innerHTML = "A"
+    // } else ({
+    //   document.getElementById("riskGrade").innerHTML = "D"
+    // }
+    // console.log(this.state.riskGrade);
 
 
   }
