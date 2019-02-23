@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Col, Container, Badge, Row, Button } from 'reactstrap';
+  CardTitle, CardSubtitle, Col, Container, Badge, Row, Button, TabContent, TabPane, NavItem, Nav, NavLink } from 'reactstrap';
 import Treatment from './Treatment';
 import Life from './Life';
 
@@ -8,7 +8,7 @@ import Life from './Life';
 // it'll contain a component for history
 class Addict extends React.Component {
     state = { 
-        value: 'one'
+        activeTab: '1'
    };
     handleChange = (event, value) => {
       this.setState({ value });
@@ -19,13 +19,21 @@ class Addict extends React.Component {
     };
   
     constructor(props) {
-      super(props);
-  
-      this.setState({
+        super(props);
 
-      });
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+          activeTab: '1'
+        };
     }
   
+    toggle(tab) {
+        if (this.state.activeTab !== tab) {
+          this.setState({
+            activeTab: tab
+          });
+        }
+      }
     componentWillMount() {
       this.setState({
         caseID: this.props.caseID,
@@ -66,8 +74,30 @@ class Addict extends React.Component {
                         </Row>
             </Container>
         </CardBody>
-        <Treatment insurance="bluecross" discharge="done" dsm="opiod" firstUse="17" />
-        <Life marital="married" education="high school" notLabor="hurt" incomeSrc="disability" />
+        <Nav tabs>
+          <NavItem>
+            <NavLink
+              onClick={() => { this.toggle('1'); }}
+            >
+              Treatment
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink
+              onClick={() => { this.toggle('2'); }}
+            >
+              Life
+            </NavLink>
+          </NavItem>
+        </Nav>
+        <TabContent activeTab={this.state.activeTab}>
+          <TabPane tabId="1">
+            <Treatment insurance="bluecross" discharge="done" dsm="opiod" firstUse="17" />
+          </TabPane>
+          <TabPane tabId="2">
+            <Life marital="married" education="high school" notLabor="hurt" incomeSrc="disability" />
+          </TabPane>
+        </TabContent>
       </Card>
     </div>
    );
