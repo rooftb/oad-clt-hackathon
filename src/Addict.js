@@ -77,7 +77,7 @@ class Addict extends React.Component {
           <Dock width={400} height={100} magnification={1} magnifyDirection="center">
             {addicts.map((item, index) => (
               <Dock.Item key={index} onClick={(x) => {this.setAddictData(item); }}>
-                <img className="dockIcon" src='http://chittagongit.com/images/person-icon-svg/person-icon-svg-26.jpg' />
+                <img className="dockIcon" src='https://s3.amazonaws.com/iconbros/icons/icon_pngs/000/000/344/original/avatar.png?1510841721' />
               </Dock.Item>
             ))}
           </Dock>
@@ -85,8 +85,6 @@ class Addict extends React.Component {
         <Card>
           <CardBody>
             <CardTitle><i>CASE: {this.state.caseID}</i></CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
             <Container>
               <Row className="justify-content-center" >
                 <Col l="3" align="center">
