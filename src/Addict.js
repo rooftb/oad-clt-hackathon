@@ -29,6 +29,7 @@ class Addict extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
+    this.setAddictData = this.setAddictData.bind(this);
     this.state = {
       activeTab: '1',
       fadeIn: true
@@ -44,6 +45,19 @@ class Addict extends React.Component {
     }
   }
 
+  setAddictData(item) {
+    this.setState({
+      caseID: item.caseID,
+      age: item.age,
+      gender: item.gender,
+      race: item.race,
+      education: item.race,
+      employment: item.employ,
+      arrests: item.arrests,
+      living: item.livingArrangements
+    });
+    console.log(item.caseID);
+  }
   componentWillMount() {
     this.setState({
       caseID: this.props.caseID,
@@ -61,8 +75,8 @@ class Addict extends React.Component {
       <div>
         <div>
           <Dock width={400} height={100} magnification={1} magnifyDirection="center">
-            {["a", "b", "c", "d", "e"].map((item, index) => (
-              <Dock.Item key={index} onClick={() => console.log(item)}>
+            {addicts.map((item, index) => (
+              <Dock.Item key={index} onClick={(x) => {this.setAddictData(item); }}>
                 <img className="dockIcon" src='http://chittagongit.com/images/person-icon-svg/person-icon-svg-26.jpg' />
               </Dock.Item>
             ))}
@@ -111,25 +125,16 @@ class Addict extends React.Component {
                 Life
             </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink className="navTab"
-                onClick={() => { this.toggle('3'); }}
-              >
-                Risk
-            </NavLink>
-            </NavItem>
           </Nav>
-          <TabContent activeTab={this.state.activeTab}>
+          <TabContent  activeTab={this.state.activeTab}>
             <TabPane tabId="1">
               <Treatment insurance="bluecross" discharge="done" dsm="opiod" firstUse="17" />
             </TabPane>
             <TabPane tabId="2">
               <Life marital="married" education="high school" notLabor="hurt" incomeSrc="disability" />
             </TabPane>
-            <TabPane tabId="3">
-              <Risk methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
-            </TabPane>
           </TabContent>
+          <Risk riskGrade="C" methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
         </Card>
       </div>
 

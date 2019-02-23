@@ -7,6 +7,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bootstrap": "^4.3.1",
+    "brain.js": "^1.6.1",
     "i": "^0.3.6",
     "jquery": "^3.3.1",
     "json-loader": "^0.5.7",

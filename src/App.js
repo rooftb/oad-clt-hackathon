@@ -3,7 +3,7 @@ import Addict from './Addict';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeartbeat, faNotesMedical, faPills } from '@fortawesome/free-solid-svg-icons'
-import addicts from './addicts'
+
 import {
     Collapse,
     Navbar,
@@ -33,16 +33,6 @@ class App extends Component {
         });
     }
     render() {
-        const addictsObs = addicts.map((addict) => {
-            return (
-            <Addict caseID={addict.caseID}
-            gender={addict.gender}
-            age={addict.age}
-            race={addict.race}
-            insurance={addict.insurance}
-            />
-            )
-        })
         return (
             <div>
                 <Navbar color="inverse" light expand="md">
@@ -57,7 +47,7 @@ class App extends Component {
                 <Container>
                     <Row>
                         <Col>
-                            {addictsObs}
+                            <Addict caseID="010101" age="50" gender="F" race="W" />
                         </Col>
                     </Row>
                 </Container>
