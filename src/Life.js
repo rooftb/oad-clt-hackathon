@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardBody,
-  CardTitle, Container, Col, Row } from 'reactstrap';
+import { Card, CardHeader, CardBody,
+  Container, Col, Row } from 'reactstrap';
 class Life extends React.Component {
     state = { 
         value: 'one'
@@ -33,10 +33,8 @@ class Life extends React.Component {
     return (
     <div>
      <Card>
+     <CardHeader color="primary">Life</CardHeader>
         <CardBody>
-        <CardTitle>
-          <h2>Life</h2>
-        </CardTitle>
           <Container>
             <Row>
               <Col xs="6">

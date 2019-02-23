@@ -56,19 +56,19 @@ class Addict extends React.Component {
           <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
           <Container>
                         <Row>
-                            <Col>
-                            <Button color="primary" outline>
-                                Age <Badge color="secondary">{this.state.age}</Badge>
+                            <Col xs="1">
+                            <Button color="light" className=" activeStat active" outline>
+                                Age <Badge>{this.state.age}</Badge>
                             </Button>
                             </Col>
-                            <Col>
-                            <Button color="primary" outline>
-                                Race <Badge color="secondary">{this.state.race}</Badge>
+                            <Col xs="1">
+                            <Button color="light" className="active activeStat" outline>
+                                Race <Badge>{this.state.race}</Badge>
                             </Button>
                             </Col>
-                            <Col>
-                            <Button color="primary" outline>
-                                Gender <Badge color="secondary">{this.state.gender}</Badge>
+                            <Col xs="1">
+                            <Button color="light" className="active activeStat" outline>
+                                Gender <Badge>{this.state.gender}</Badge>
                             </Button>
                             </Col>
                         </Row>
