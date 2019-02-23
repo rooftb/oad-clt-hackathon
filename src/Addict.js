@@ -8,20 +8,13 @@ import Life from './Life';
 import Dock from "react-osx-dock";
 import addicts from "./addicts.js";
 import Risk from './Risk';
-<<<<<<< HEAD
-// import {Fab} from './Fab';
-=======
 import Assessment from './Assessment';
 
->>>>>>> fc71dd317f34d5da29e58d22fa4f231065c65c51
 // The Addict component can represent the whole addict page,
 // it'll contain a component for history
 class Addict extends React.Component {
   state = {
-    activeTab: '1',
-    addicts: {
-
-    }
+    activeTab: '1'
   };
   handleChange = (event, value) => {
     this.setState({ value });
@@ -70,34 +63,16 @@ class Addict extends React.Component {
     console.log(item.caseID);
   }
   componentWillMount() {
-    this.setState({
-      caseID: this.props.caseID,
-      age: this.props.age,
-      gender: this.props.gender,
-      race: this.props.race,
-      education: this.props.race,
-      employment: this.props.employ,
-      arrests: this.props.arrests,
-      living: this.props.livingArrangements,
-      insurance: this.props.insurance,
-      dsm: this.props.dsm,
-      discharge: this.props.discharge,
-      stayDuration: this.props.stayDuration,
-      firstUse: this.props.firstUse,
-      marital: this.props.marital,
-      education: this.props.education,
-      notInLabor: this.props.notInLabor,
-      incomeSrc: this.props.incomeSrc
-    });
+    this.setAddictData(addicts[0]);
   }
   render() {
     return (
       <div>
         <div>
           <Dock align="center" width={400} height={50} magnification={1} magnifyDirection="center">
-            {["a", "b", "c", "d", "e"].map((item, index) => (
-              <Dock.Item key={index} onClick={() => console.log(item)}>
-                <img className="dockIcon" src='http://chittagongit.com/images/person-icon-svg/person-icon-svg-26.jpg' />
+            {addicts.map((item, index) => (
+              <Dock.Item key={index} onClick={(x) => this.setAddictData(item)}>
+                <img className="dockIcon" src='https://s3.amazonaws.com/iconbros/icons/icon_pngs/000/000/344/original/avatar.png?1510841721' />
               </Dock.Item>
             ))}
           </Dock>
@@ -107,7 +82,7 @@ class Addict extends React.Component {
           <CardBody>
             <CardTitle><i>CASE: {this.state.caseID}</i></CardTitle>
             <Container>
-              <Row className="justify-content-center" >
+              <Row >
                 <Col l="3" align="center">
                   <div className=" activeStat" outline>
                     {this.state.age}
@@ -153,7 +128,7 @@ class Addict extends React.Component {
             </NavItem>
             <NavItem>
               <NavLink className="navTab"
-                onClick={() => { this.toggle('4'); }}
+                onClick={() => { this.toggle('3'); }}
               >
                 Assessment
             </NavLink>
@@ -167,13 +142,12 @@ class Addict extends React.Component {
               <Life {...this.state} />
             </TabPane>
             <TabPane tabId="3">
-              <Risk methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
-            </TabPane>
-            <TabPane tabId="4">
-              <Assessment methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
+              <Assessment {...this.state} />
             </TabPane>
           </TabContent>
-          <Risk riskGrade="C" methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
+        </Card>
+        <Card>
+        <Risk riskGrade="C" methuse="Yes" treatment="none" prescriptions="Oxy" arrests="11" />
         </Card>
       </div >
 
