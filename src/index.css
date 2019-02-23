@@ -133,3 +133,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+option .addictDesc {
+  font-size:.5rem !important;
+}

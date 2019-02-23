@@ -124,13 +124,7 @@ class Addict extends React.Component {
               <NavLink className="navTab"
                 onClick={() => { this.toggle('3'); }}
               >
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink className="navTab"
-                onClick={() => { this.toggle('4'); }}
-              >
-                Assessment
+                Risk Assessment
             </NavLink>
             </NavItem>
           </Nav>
@@ -142,8 +136,6 @@ class Addict extends React.Component {
               <Life {...this.state} />
             </TabPane>
             <TabPane tabId="3">
-            </TabPane>
-            <TabPane tabId="4">
               <Assessment {...this.state} />
             </TabPane>
           </TabContent>
