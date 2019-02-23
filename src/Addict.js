@@ -59,7 +59,8 @@ class Addict extends React.Component {
       incomeSrc: item.incomeSrc,
       dsm: item.dsm,
       marital: item.marital,
-      insurance: item.insurance
+      insurance: item.insurance,
+      img: item.img
     });
     console.log(item.caseID);
   }
@@ -73,7 +74,7 @@ class Addict extends React.Component {
           <Dock align="center" className="justify-content-center" width={200} height={50} magnification={.5} magnifyDirection="center">
             {addicts.map((item, index) => (
               <Dock.Item key={index} onClick={(x) => this.setAddictData(item)}>
-                <img className="dockIcon" src='https://s3.amazonaws.com/iconbros/icons/icon_pngs/000/000/344/original/avatar.png?1510841721' />
+                <img className="dockIcon" src={item.img} />
               </Dock.Item>
             ))}
           </Dock>
