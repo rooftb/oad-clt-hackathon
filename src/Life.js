@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardText, CardBody,
-  CardTitle, Container, ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, CardBody,
+  CardTitle, Container, Col, Row } from 'reactstrap';
 class Life extends React.Component {
     state = { 
         value: 'one'
@@ -32,21 +32,28 @@ class Life extends React.Component {
   render() {
     return (
     <div>
-      <Card>
+     <Card>
+      <Container>
+        <CardTitle>
+          <h2>Life</h2>
+        </CardTitle>
+        <CardBody>
           <Container>
-      <CardTitle><h2>Life</h2></CardTitle>
-        <CardBody>  
-          <CardText>
-            <ListGroup>
-              <ListGroupItem>Marital: {this.state.marital}</ListGroupItem>
-              <ListGroupItem>Education: {this.state.education}</ListGroupItem>
-              <ListGroupItem>Not in Labor: {this.state.notLabor}</ListGroupItem>
-              <ListGroupItem>Income Source: {this.state.incomeSrc}</ListGroupItem>
-            </ListGroup>
-          </CardText>
+            <Row>
+              <Col xs="6">
+                <span>Marital</span><br />
+                {this.state.marital}
+              </Col>
+              <Col xs="6">Education: {this.state.education}</Col>
+            </Row>
+            <Row>
+              <Col xs="6">Not in Labor: {this.state.notLabor}</Col>
+              <Col xs="6">Income Source: {this.state.incomeSrc}</Col>
+            </Row>
+          </Container>
         </CardBody>
-        </Container>
-      </Card>
+      </Container>
+    </Card>
     </div>
    );
 }
