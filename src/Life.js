@@ -1,69 +1,75 @@
 import React from 'react';
-import { Card, CardBody,
-  CardTitle, Container, Col, Row } from 'reactstrap';
-class Life extends React.Component {
-    state = { 
-        value: 'one'
-   };
-    handleChange = (event, value) => {
-      this.setState({ value });
-    };
-  
-    handleChangeIndex = index => {
-      this.setState({ value: index });
-    };
-  
-    constructor(props) {
-      super(props);
-  
-      this.setState({
+import {
+  Card, CardBody,
+  CardTitle, Container, Col, Row
+} from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
-      });
-    }
-  
-    componentWillMount() {
-      this.setState({
-            marital: this.props.marital,
-            education: this.props.education,
-            notLabor: this.props.notLabor,
-            incomeSrc: this.props.incomeSrc
-      });
-    }
+
+class Life extends React.Component {
+  state = {
+    value: 'one'
+  };
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  handleChangeIndex = index => {
+    this.setState({ value: index });
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.setState({
+
+    });
+  }
+
+  componentWillMount() {
+    this.setState({
+      marital: this.props.marital,
+      education: this.props.education,
+      notLabor: this.props.notLabor,
+      incomeSrc: this.props.incomeSrc
+    });
+  }
   render() {
     return (
-    <div>
-     <Card>
-        <CardBody>
-        <CardTitle>
-          <h2>Life</h2>
-        </CardTitle>
-          <Container>
-            <Row>
-              <Col xs="6">
-                <span className="addictTitle">Marital</span><br />
-                {this.state.marital}
-              </Col>
-              <Col xs="6">
-                <span className="addictTitle">Education</span><br />
-                {this.state.education}
-              </Col>
-            </Row>
-            <Row>
-              <Col xs="6">
-                <span className="addictTitle">Not in Labor</span><br />
-                {this.state.notLabor}
-              </Col>
-              <Col xs="6">
-                <span className="addictTitle">Income Source</span><br />
-                {this.state.incomeSrc}
-              </Col>
-            </Row>
-          </Container>
-        </CardBody>
-    </Card>
-    </div>
-   );
-}
+      <div>
+        <Card>
+          <CardBody>
+            <CardTitle>
+              <h2 className="lifeTitle">  <FontAwesomeIcon icon="heartbeat" className="icon" /> Life</h2>
+            </CardTitle>
+            <Container>
+              <Row>
+                <Col s="6">
+                  <span className="addictTitle">Marital</span><br />
+                  <span className="addictDesc">{this.state.marital}</span>
+                </Col>
+                <Col s="6">
+                  <span className="addictTitle">Education</span><br />
+                  <span className="addictDesc">{this.state.education}</span>
+                </Col>
+              </Row>
+              <Row>
+                <Col s="6">
+                  <span className="addictTitle">Not in Labor</span><br />
+                  <span className="addictDesc">{this.state.notLabor}</span>
+                </Col>
+                <Col s="6">
+                  <span className="addictTitle">Income Source</span><br />
+                  <span className="addictDesc">{this.state.incomeSrc}</span>
+                </Col>
+              </Row>
+            </Container>
+          </CardBody >
+        </Card >
+      </div >
+    );
+  }
 }
 
 export default Life;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Addict from './Addict';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 
 import {
     Collapse,
@@ -17,7 +17,7 @@ import {
     Col
     // Jumbotron
 } from 'reactstrap';
-library.add(faIgloo)
+library.add(faHeartbeat)
 class App extends Component {
     constructor(props) {
         super(props);
@@ -44,13 +44,13 @@ class App extends Component {
                     </Collapse>
                 </Navbar>
                 {/* <Jumbotron> */}
-                    <Container>
-                        <Row>
-                            <Col>
-                                <Addict caseID="010101" age="50" gender="F" race="W"/>
-                            </Col>
-                        </Row>
-                    </Container>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Addict caseID="010101" age="50" gender="F" race="W" />
+                        </Col>
+                    </Row>
+                </Container>
                 {/* </Jumbotron> */}
             </div>
         );

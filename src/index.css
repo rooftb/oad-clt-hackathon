@@ -1,3 +1,8 @@
+@fontface {
+  font-family: 'Avenir', sans-serif;
+  src: url('../src/Avenir.otf');
+ }
+
 body {
   margin: 0;
   padding: 0;
@@ -6,15 +11,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #e5ecef !important;
 }
-@fontface {
-  font-family: 'Montserrat', sans-serif;
-  src: url('https://fonts.googleapis.com/css?family=Montserrat')
- }
+
+.card-title {
+  font-family: 'Avenir';
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.lifeTitle {
+  font-size: 1em;
+  font-weight: bold;
+}
 
 .addictTitle {
-  font-family: 'Montserrat';
+  font-family: 'Avenir';
   color: darkslateblue;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.addictDesc {
+  font-family: 'Avenir';
+  color: black;
+  font-size: 1em;
+}
+
+.icon {
+  color:darkslateblue;
+  opacity: 0.5;
 }
 
 code {
