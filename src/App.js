@@ -33,16 +33,6 @@ class App extends Component {
         });
     }
     render() {
-        const addictsObs = addicts.map((addict) => {
-            return (
-                <Addict caseID={addict.caseID}
-                    gender={addict.gender}
-                    age={addict.age}
-                    race={addict.race}
-                    insurance={addict.insurance}
-                />
-            )
-        })
         return (
             <div>
                 <Navbar color="dark" light expand="md">
