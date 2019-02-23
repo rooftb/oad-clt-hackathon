@@ -18,18 +18,21 @@ class Risk extends React.Component {
 
     });
   }
-  componentDidMount() {
+  componentDidUpdate() {
     this.updateRecommendation();
   }
   updateRecommendation() {
-    if(this.state.riskGrade == "A+" || this.state.riskGrade == "A") {
-      document.getElementById("recommendation").innerHTML = "Continue Pain Managment"
+    let grade = document.getElementById("riskGrade").innerHTML;
+    if(grade == "A+" || grade == "A") {
+      document.getElementById("recommendation").innerHTML = "Continue Pain Managment";
     }
-    else if(this.state.riskGrade == "B") {
-      document.getElementById("recommendation").innerHTML = "Opioid Dependence Treatment"
+    else if(grade == "B") {
+      console.log("setting to b");
+      document.getElementById("recommendation").innerHTML = "Opioid Dependence Treatment";
+      console.log(document.getElementById("recommendation").innerHTML );
     }
-    else if(this.state.riskGrade == "C" || this.state.riskGrade == "D") {
-      document.getElementById("recommendation").innerHTML = "Inpatient Treatment"
+    else if(grade == "C" || grade == "D") {
+      document.getElementById("recommendation").innerHTML = "Inpatient Treatment";
     }
   }
   componentWillMount() {
