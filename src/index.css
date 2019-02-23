@@ -19,10 +19,17 @@ body {
   background: #e5ecef !important;
 }
 
+.headerTitle {
+  font-family: Avenir;
+  font-weight: bold;
+}
+
 .navTab {
-  background-color: #e5ecef !important;
+  /* background-color: #e5ecef !important; */
+  font:'Avenir';
   color:black;
   cursor: pointer;
+  border: 1px black;
 }
 
 .treatementTitle {
@@ -106,6 +113,7 @@ font-size: 2em;
 font-weight: bold;
 text-align:    center;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

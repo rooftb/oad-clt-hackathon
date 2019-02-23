@@ -54,7 +54,7 @@ class Assessment extends React.Component {
         <Card>
           <CardBody>
             <CardTitle>
-              <h2 className="lifeTitle">  <FontAwesomeIcon icon="notes-medical" className="check" /> Assessment</h2>
+              <h2 className="lifeTitle">  <FontAwesomeIcon icon="check" className="icon" /> Assessment</h2>
             </CardTitle>
             <form ref="form" onSubmit={this.handleSubmit}>
             <Container>
@@ -200,6 +200,12 @@ class Assessment extends React.Component {
                     <option value="1">Once</option>
                     <option value="2">Two or More Times</option>
                   </select>
+                </Col>
+              </Row>
+              <br></br>
+              <Row>
+                <Col s="4">
+                  <button align="center" className="justify-content-center">Submit</button>
                 </Col>
               </Row>
             </Container>

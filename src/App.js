@@ -36,7 +36,7 @@ class App extends Component {
         return (
             <div>
                 <Navbar color="dark" light expand="md">
-                    <NavbarBrand style={{color: "white"}} light href="/">Opiod Abusers Database (OAD)</NavbarBrand>
+                    <NavbarBrand style={{ color: "white" }} className="headerTitle" light href="/">Opiod Abusers Database (OAD)</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
