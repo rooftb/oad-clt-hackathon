@@ -16,7 +16,7 @@ const addicts = [
         stayDuration: 5,
         marital: "Single",
         incomeSrc: "Public Assistance",
-        img: "../src/woman1.jpg"
+        img: "./woman1.jpg"
     },
     {
         caseID: 414141,
@@ -33,7 +33,8 @@ const addicts = [
         notInLabor: "Student",
         stayDuration: 4,
         marital: "Single",
-        incomeSrc: "Other"
+        incomeSrc: "Other",
+	img: "./woman1.jpg"
     },
     {
         caseID: 429491,
