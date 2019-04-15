@@ -1,3 +1,6 @@
+To build and deploy run `yarn run build && firebase deploy`
+^ added by aida 4/15
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
