@@ -1,12 +1,27 @@
 import React from 'react';
 import {
-  Card, CardText, CardBody, Fade,
-  CardTitle, CardSubtitle, Col, Container, Badge, Row, Button, TabContent, TabPane, NavItem, Nav, NavLink
+  Card,
+  CardText,
+  CardBody,
+  Fade,
+  CardTitle,
+  CardSubtitle,
+  Col,
+  Container,
+  Badge,
+  Row,
+  Button,
+  TabContent,
+  TabPane,
+  NavItem,
+  Nav,
+  NavLink,
 } from 'reactstrap';
 import Treatment from './Treatment';
 import Life from './Life';
-import Dock from "react-osx-dock";
-import addicts from "./addicts.js";
+import Dock from 'react-osx-dock';
+import addicts from './addicts.js';
+import woman1 from './woman1.png';
 
 import Assessment from './Assessment';
 // import {Fab} from './Fab';
@@ -14,15 +29,15 @@ import Assessment from './Assessment';
 // it'll contain a component for history
 class Addict extends React.Component {
   state = {
-    activeTab: '1'
+    activeTab: '1',
   };
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
   componentDidMount = () => {
-    this.setState({ addicts: addicts })
-  }
+    this.setState({ addicts: addicts });
+  };
 
   constructor(props) {
     super(props);
@@ -30,7 +45,7 @@ class Addict extends React.Component {
     this.setAddictData = this.setAddictData.bind(this);
     this.state = {
       activeTab: '1',
-      fadeIn: true
+      fadeIn: true,
     };
   }
 
@@ -38,7 +53,7 @@ class Addict extends React.Component {
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab,
-        fadeIn: !this.state.fadeIn
+        fadeIn: !this.state.fadeIn,
       });
     }
   }
@@ -60,7 +75,7 @@ class Addict extends React.Component {
       dsm: item.dsm,
       marital: item.marital,
       insurance: item.insurance,
-      img: item.img
+      img: item.img,
     });
     console.log(item.caseID);
   }
@@ -71,10 +86,17 @@ class Addict extends React.Component {
     return (
       <div>
         <div>
-          <Dock align="center" className="justify-content-center" width={200} height={50} magnification={.5} magnifyDirection="center">
+          <Dock
+            align='center'
+            className='justify-content-center'
+            width={200}
+            height={50}
+            magnification={0.5}
+            magnifyDirection='center'
+          >
             {addicts.map((item, index) => (
               <Dock.Item key={index} onClick={(x) => this.setAddictData(item)}>
-                <img className="dockIcon" src={item.img} />
+                <img className='dockIcon' src={woman1} />
               </Dock.Item>
             ))}
           </Dock>
@@ -82,70 +104,72 @@ class Addict extends React.Component {
         </div>
         <Card>
           <CardBody>
-            <CardTitle><i>CASE: {this.state.caseID}</i></CardTitle>
+            <CardTitle>
+              <i>CASE: {this.state.caseID}</i>
+            </CardTitle>
             <Container>
-              <Row >
-                <Col l="3" align="center">
-                  <div className="activeStat">
-                    {this.state.age}
-                  </div>
-                  <h3 className="addictSubtitle">Age</h3>
+              <Row>
+                <Col l='3' align='center'>
+                  <div className='activeStat'>{this.state.age}</div>
+                  <h3 className='addictSubtitle'>Age</h3>
                 </Col>
-                <Col l="3" align="center">
-                  <div className=" activeStat">
-                    {this.state.race}
-                  </div>
-                  <h3 className="addictSubtitle">Race</h3>
+                <Col l='3' align='center'>
+                  <div className=' activeStat'>{this.state.race}</div>
+                  <h3 className='addictSubtitle'>Race</h3>
                 </Col>
-                <Col l="3" align="center">
-                  <div className=" activeStat">
-                    {this.state.gender}
-                  </div>
-                  <h3 className="addictSubtitle">Gender</h3>
+                <Col l='3' align='center'>
+                  <div className=' activeStat'>{this.state.gender}</div>
+                  <h3 className='addictSubtitle'>Gender</h3>
                 </Col>
               </Row>
             </Container>
           </CardBody>
           <Nav tabs>
             <NavItem>
-              <NavLink className="navTab"
-                onClick={() => { this.toggle('1'); }}
+              <NavLink
+                className='navTab'
+                onClick={() => {
+                  this.toggle('1');
+                }}
               >
                 Treatment
-            </NavLink>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navTab"
-                onClick={() => { this.toggle('2'); }}
+              <NavLink
+                className='navTab'
+                onClick={() => {
+                  this.toggle('2');
+                }}
               >
                 Life
-            </NavLink>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navTab"
-                onClick={() => { this.toggle('3'); }}
+              <NavLink
+                className='navTab'
+                onClick={() => {
+                  this.toggle('3');
+                }}
               >
                 Risk Assessment
-            </NavLink>
+              </NavLink>
             </NavItem>
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
-            <TabPane tabId="1">
+            <TabPane tabId='1'>
               <Treatment {...this.state} />
             </TabPane>
-            <TabPane tabId="2">
+            <TabPane tabId='2'>
               <Life {...this.state} />
             </TabPane>
-            <TabPane tabId="3">
+            <TabPane tabId='3'>
               <Assessment {...this.state} />
             </TabPane>
           </TabContent>
         </Card>
-        <Card>
-
-        </Card>
-      </div >
-
+        <Card></Card>
+      </div>
     );
   }
 }
