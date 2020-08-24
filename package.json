@@ -16,12 +16,11 @@
     "react-dom": "^16.8.3",
     "react-icons": "^3.4.0",
     "react-osx-dock": "^1.0.0",
+    "react-scripts": "^2.1.8",
     "react-tiny-fab": "^2.0.0",
     "reactstrap": "^7.1.0"
   },
-  "dependencies": {
-    "react-scripts": "^2.1.5"
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
